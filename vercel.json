@@ -21,7 +21,7 @@
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_KEY": "base64:FoDq79WdE1o210p3mUOuE+gnbSFpJyBDuN9IJY28Q5c=",
         "APP_URL": "https://www.laravel-example.vercel.app",
 
