@@ -51,10 +51,14 @@ return [
     */
 
     'channels' => [
+        // 'stack' => [
+        //     'driver' => 'stack',
+        //     'channels' => ['single','vercel'],
+        //     'ignore_exceptions' => false,
+        // ],
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single','vercel'],
-            'ignore_exceptions' => false,
+            'channels' => ['stderr'],
         ],
 
         'single' => [
@@ -89,11 +93,19 @@ return [
             ],
         ],
 
+        // 'stderr' => [
+        //     'driver' => 'monolog',
+        //     'level' => env('LOG_LEVEL', 'debug'),
+        //     'handler' => StreamHandler::class,
+        //     'formatter' => env('LOG_STDERR_FORMATTER'),
+        //     'with' => [
+        //         'stream' => 'php://stderr',
+        //     ],
+        // ],
+
         'stderr' => [
             'driver' => 'monolog',
-            'level' => env('LOG_LEVEL', 'debug'),
-            'handler' => StreamHandler::class,
-            'formatter' => env('LOG_STDERR_FORMATTER'),
+            'handler' => Monolog\Handler\StreamHandler::class,
             'with' => [
                 'stream' => 'php://stderr',
             ],
