@@ -23,6 +23,17 @@
         "APP_ENV": "production",
         "APP_DEBUG": "false",
         "APP_KEY": "base64:FoDq79WdE1o210p3mUOuE+gnbSFpJyBDuN9IJY28Q5c=",
-        "APP_URL": "https://www.laravel-example.vercel.app"
+        "APP_URL": "https://www.laravel-example.vercel.app",
+
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie"
     }
 }
