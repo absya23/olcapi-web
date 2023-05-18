@@ -53,7 +53,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['single','vercel'],
             'ignore_exceptions' => false,
         ],
 
@@ -116,6 +116,11 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+        ],
+
+        'vercel' => [
+            'driver' => 'errorlog',
+            'level' => 'debug',
         ],
     ],   
 ];
