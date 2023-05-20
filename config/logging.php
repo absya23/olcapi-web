@@ -51,11 +51,11 @@ return [
     */
 
     'channels' => [
-        'stack' => [
-            'driver' => 'stack',
-            'channels' => ['single','vercel'],
-            'ignore_exceptions' => false,
-        ],
+        // 'stack' => [
+        //     'driver' => 'stack',
+        //     'channels' => ['single','vercel'],
+        //     'ignore_exceptions' => false,
+        // ],
 
         // 'stack' => [
         //     'driver' => 'stack',
@@ -66,6 +66,11 @@ return [
         //     'driver' => 'stack',
         //     'channels' => ['database'],
         // ],
+
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['vercel', 'daily'],
+        ],
 
         'single' => [
             'driver' => 'single',
@@ -143,8 +148,13 @@ return [
         ],
 
         'vercel' => [
-            'driver' => 'errorlog',
-            'level' => 'debug',
+            'driver' => 'monolog',
+            'handler' => Vercel\Monolog\Handler\VercelHandler::class,
+            'formatter' => env('LOG_CHANNEL', 'daily'),
+            'formatter_with' => [
+                'dateFormat' => 'Y-m-d H:i:s',
+                'includeStacktraces' => true,
+            ],
         ],
 
         // 'database' => [
