@@ -51,21 +51,21 @@ return [
     */
 
     'channels' => [
-        // 'stack' => [
-        //     'driver' => 'stack',
-        //     'channels' => ['single','vercel'],
-        //     'ignore_exceptions' => false,
-        // ],
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['single','vercel'],
+            'ignore_exceptions' => false,
+        ],
 
         // 'stack' => [
         //     'driver' => 'stack',
         //     'channels' => ['stderr'],
         // ],
 
-        'stack' => [
-            'driver' => 'stack',
-            'channels' => ['database'],
-        ],
+        // 'stack' => [
+        //     'driver' => 'stack',
+        //     'channels' => ['database'],
+        // ],
 
         'single' => [
             'driver' => 'single',
@@ -147,11 +147,11 @@ return [
             'level' => 'debug',
         ],
 
-        'database' => [
-            'driver' => 'custom',
-            'via' => App\Logging\DatabaseLogger::class,
-            'level' => 'debug',
-        ],
+        // 'database' => [
+        //     'driver' => 'custom',
+        //     'via' => App\Logging\DatabaseLogger::class,
+        //     'level' => 'debug',
+        // ],
     ],   
 
 ];
