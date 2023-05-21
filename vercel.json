@@ -1,4 +1,9 @@
 {
+    "version": 2,
+    "framework": null,
+    "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.4.1" }
+    },
     "regions": ["hnd1"],
     "builds": [
         {
@@ -32,6 +37,7 @@
             "dest": "/api/index.php"
         }
     ],
+    "rewrites": [{ "source": "/(.*)", "destination": "/api/index.php" }],
     "env": {
         "APP_NAME": "server",
         "APP_ENV": "production",
