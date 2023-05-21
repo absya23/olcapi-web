@@ -53,14 +53,14 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single','vercel'],
+            'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
 
-        // 'stack' => [
-        //     'driver' => 'stack',
-        //     'channels' => ['stderr'],
-        // ],
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['stderr'],
+        ],
 
         // 'stack' => [
         //     'driver' => 'stack',
@@ -71,10 +71,10 @@ return [
         //     'driver' => 'stack',
         //     'channels' => ['vercel', 'daily'],
         // ],
-        'stack' => [
-            'driver' => 'stack',
-            'channels' => ['papertrail'],
-        ],
+        // 'stack' => [
+        //     'driver' => 'stack',
+        //     'channels' => ['papertrail'],
+        // ],
 
         'single' => [
             'driver' => 'single',
