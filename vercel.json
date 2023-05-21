@@ -32,7 +32,6 @@
             "dest": "/api/index.php"
         }
     ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/api/index.php" }],
     "env": {
         "APP_NAME": "server",
         "APP_ENV": "production",
