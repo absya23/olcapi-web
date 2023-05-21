@@ -28,7 +28,9 @@
         "VIEW_COMPILED_PATH": "/tmp",
 
         "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "LOG_CHANNEL": "stack",
+        "SESSION_DRIVER": "cookie",
+        "PAPERTRAIL_URL": "logs3.papertrailapp.com",
+        "PAPERTRAIL_PORT": "45734"
     }
 }

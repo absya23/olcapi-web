@@ -67,9 +67,13 @@ return [
         //     'channels' => ['database'],
         // ],
 
+        // 'stack' => [
+        //     'driver' => 'stack',
+        //     'channels' => ['vercel', 'daily'],
+        // ],
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['vercel', 'daily'],
+            'channels' => ['papertrail'],
         ],
 
         'single' => [
@@ -162,6 +166,21 @@ return [
         //     'via' => App\Logging\DatabaseLogger::class,
         //     'level' => 'debug',
         // ],
+
+
+        'papertrail' => [
+            'driver' => 'monolog',
+            'handler' => Monolog\Handler\SyslogUdpHandler::class,
+            'level' => 'debug',
+            'formatter' => env('LOG_FORMATTER', \Monolog\Formatter\LineFormatter::class),
+            'formatter_with' => [
+                'format' => '[%datetime%] %channel%.%level_name%: %message% %context% %extra%',
+            ],
+            'handler_with' => [
+                'host' => env('PAPERTRAIL_URL'),
+                'port' => env('PAPERTRAIL_PORT'),
+            ],
+        ],
     ],   
 
 ];
