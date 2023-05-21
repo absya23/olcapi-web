@@ -18,7 +18,7 @@
         "APP_ENV": "production",
         "APP_DEBUG": "false",
         "APP_KEY": "base64:XsLDRWRFK8ynnK6M6MhwLdCLDlJA9E8N/8xNEnFQ4Zw=",
-        "APP_URL": "https://olcapi-web.vercel.app",
+        "APP_URL": "https://olcapi-web.vercel.app/",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
@@ -29,8 +29,6 @@
 
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie",
-        "SSR_TEMP_PATH": "/tmp/ssr",
-        "NODE_PATH": "node"
+        "SESSION_DRIVER": "cookie"
     }
 }
