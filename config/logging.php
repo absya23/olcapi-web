@@ -54,7 +54,6 @@ return [
         'stack' => [
             'driver' => 'stack',
             'channels' => ['single'],
-            'ignore_exceptions' => false,
         ],
 
         'stack' => [
@@ -101,17 +100,6 @@ return [
             'username' => 'Laravel Log',
             'emoji' => ':boom:',
             'level' => env('LOG_LEVEL', 'critical'),
-        ],
-
-        'papertrail' => [
-            'driver' => 'monolog',
-            'level' => env('LOG_LEVEL', 'debug'),
-            'handler' => env('LOG_PAPERTRAIL_HANDLER', SyslogUdpHandler::class),
-            'handler_with' => [
-                'host' => env('PAPERTRAIL_URL'),
-                'port' => env('PAPERTRAIL_PORT'),
-                'connectionString' => 'tls://'.env('PAPERTRAIL_URL').':'.env('PAPERTRAIL_PORT'),
-            ],
         ],
 
         'stderr' => [
@@ -165,21 +153,6 @@ return [
         //     'driver' => 'custom',
         //     'via' => App\Logging\DatabaseLogger::class,
         //     'level' => 'debug',
-        // ],
-
-
-        // 'papertrail' => [
-        //     'driver' => 'monolog',
-        //     'handler' => Monolog\Handler\SyslogUdpHandler::class,
-        //     'level' => 'debug',
-        //     'formatter' => env('LOG_FORMATTER', \Monolog\Formatter\LineFormatter::class),
-        //     'formatter_with' => [
-        //         'format' => '[%datetime%] %channel%.%level_name%: %message% %context% %extra%',
-        //     ],
-        //     'handler_with' => [
-        //         'host' => env('PAPERTRAIL_URL'),
-        //         'port' => env('PAPERTRAIL_PORT'),
-        //     ],
         // ],
     ],   
 
