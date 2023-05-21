@@ -29,7 +29,7 @@
         },
         {
             "src": "/api/(.*)",
-            "dest": "/routes/api.php"
+            "dest": "/api/index.php"
         }
     ],
     "env": {
