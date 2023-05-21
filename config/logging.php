@@ -51,11 +51,11 @@ return [
     */
 
     'channels' => [
-        // 'stack' => [
-        //     'driver' => 'stack',
-        //     'channels' => ['single','vercel'],
-        //     'ignore_exceptions' => false,
-        // ],
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['single','vercel'],
+            'ignore_exceptions' => false,
+        ],
 
         // 'stack' => [
         //     'driver' => 'stack',
@@ -168,19 +168,19 @@ return [
         // ],
 
 
-        'papertrail' => [
-            'driver' => 'monolog',
-            'handler' => Monolog\Handler\SyslogUdpHandler::class,
-            'level' => 'debug',
-            'formatter' => env('LOG_FORMATTER', \Monolog\Formatter\LineFormatter::class),
-            'formatter_with' => [
-                'format' => '[%datetime%] %channel%.%level_name%: %message% %context% %extra%',
-            ],
-            'handler_with' => [
-                'host' => env('PAPERTRAIL_URL'),
-                'port' => env('PAPERTRAIL_PORT'),
-            ],
-        ],
+        // 'papertrail' => [
+        //     'driver' => 'monolog',
+        //     'handler' => Monolog\Handler\SyslogUdpHandler::class,
+        //     'level' => 'debug',
+        //     'formatter' => env('LOG_FORMATTER', \Monolog\Formatter\LineFormatter::class),
+        //     'formatter_with' => [
+        //         'format' => '[%datetime%] %channel%.%level_name%: %message% %context% %extra%',
+        //     ],
+        //     'handler_with' => [
+        //         'host' => env('PAPERTRAIL_URL'),
+        //         'port' => env('PAPERTRAIL_PORT'),
+        //     ],
+        // ],
     ],   
 
 ];
