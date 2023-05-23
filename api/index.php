@@ -29,14 +29,13 @@ if (!getenv('SESSION_DRIVER')) {
 require __DIR__.'/../vendor/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
-// Create a new instance of the router
-$router = $app->make('router');
+// Set the base path for the application
+$app->setBasePath('/api');
 
-// Load the API routes
-require __DIR__.'/../routes/api.php';
-
-// Dispatch the request
-$response = $router->dispatch($app->make('request'));
+// Run the application
+$response = $app->handle(
+    $request = Illuminate\Http\Request::capture()
+);
 
 // Send the response
 $response->send();
