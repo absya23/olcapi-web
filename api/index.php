@@ -25,20 +25,7 @@ if (!getenv('SESSION_DRIVER')) {
 /**
  * Here is the serverless function entry for deployment with Vercel.
  */
-// require __DIR__ . '/../public/index.php';
-require __DIR__.'/../vendor/autoload.php';
-$app = require_once __DIR__.'/../bootstrap/app.php';
-
-// Set the base path for the application
-$app->setBasePath('/api');
-
-// Run the application
-$response = $app->handle(
-    $request = Illuminate\Http\Request::capture()
-);
-
-// Send the response
-$response->send();
+require __DIR__ . '/../public/index.php';
 
 
 ?>
