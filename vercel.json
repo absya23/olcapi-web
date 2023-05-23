@@ -35,7 +35,7 @@
     "env": {
         "APP_NAME": "server",
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_URL": "https://olcapi-web.vercel.app",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
