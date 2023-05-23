@@ -26,23 +26,20 @@ if (!getenv('SESSION_DRIVER')) {
  * Here is the serverless function entry for deployment with Vercel.
  */
 // require __DIR__ . '/../public/index.php';
+require __DIR__.'/../vendor/autoload.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-require __DIR__ . '/../vendor/autoload.php';
-$app = require_once __DIR__ . '/../bootstrap/app.php';
-
-// Create a new Router instance
+// Create a new instance of the router
 $router = $app->make('router');
 
-// Handle API routes
-$router->group(['namespace' => 'App\Http\Controllers'], function ($router) {
-    require __DIR__ . '/../routes/api.php';
-});
+// Load the API routes
+require __DIR__.'/../routes/api.php';
 
 // Dispatch the request
-$response = $app->dispatch(app('request'));
+$response = $router->dispatch($app->make('request'));
 
 // Send the response
-$app->make('Illuminate\Contracts\Http\Kernel')->terminate($app['request'], $response);
+$response->send();
 
 
 ?>
