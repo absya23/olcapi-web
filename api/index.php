@@ -25,4 +25,17 @@ if (!getenv('SESSION_DRIVER')) {
 /**
  * Here is the serverless function entry for deployment with Vercel.
  */
-require __DIR__ . '/../public/index.php';
+// require __DIR__ . '/../public/index.php';
+
+require __DIR__ . '/../vendor/autoload.php';
+$app = require_once __DIR__ . '/../bootstrap/app.php';
+
+// Handle API routes
+$app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
+    require __DIR__ . '/../routes/api.php';
+});
+
+$app->run();
+
+
+?>
