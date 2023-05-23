@@ -30,12 +30,19 @@ if (!getenv('SESSION_DRIVER')) {
 require __DIR__ . '/../vendor/autoload.php';
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
+// Create a new Router instance
+$router = $app->make('router');
+
 // Handle API routes
-$app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
+$router->group(['namespace' => 'App\Http\Controllers'], function ($router) {
     require __DIR__ . '/../routes/api.php';
 });
 
-$app->run();
+// Dispatch the request
+$response = $app->dispatch(app('request'));
+
+// Send the response
+$app->make('Illuminate\Contracts\Http\Kernel')->terminate($app['request'], $response);
 
 
 ?>
